@@ -4,11 +4,16 @@
 
 This project is a web application built using the Spring Boot framework, designed to provide loan management functionality. It includes features such as creating loans, approving loans, making repayments, and user authentication.
 
+## Demo
+![ScreenRecording2024-04-04at8 54 32AM-ezgif com-video-to-gif-converter](https://github.com/unsortedArray/MiniLoanApp/assets/27006043/702eb57d-affd-483d-9f47-b5f918f0858c)
+
+
+
 ## Setup
 
 1. **Clone Repository**:
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/unsortedArray/MiniLoanApp>
    
 2. **Requirements**
    1. Java 17+
