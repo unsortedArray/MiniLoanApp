@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LoanRepository extends JpaRepository<Loan, Long> {
-  // You can define additional query methods here if needed
 
   Loan findById(long id);
 
