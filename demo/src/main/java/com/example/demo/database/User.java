@@ -2,8 +2,8 @@ package com.example.demo.database;
 
 
 import com.example.demo.enums.UserRoles;
-import jakarta.persistence.Entity;
 import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -13,9 +13,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
-
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 /**
  * Entity class representing a user.
  */
