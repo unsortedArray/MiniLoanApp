@@ -1,11 +1,14 @@
 package com.example.demo.service;
 
-import static com.example.demo.util.LoanCalculationsUtil.calculateEWI;
 import static com.example.demo.util.Constants.INTEREST_RATE_FED;
+import static com.example.demo.util.LoanCalculationsUtil.calculateEWI;
 import static com.example.demo.util.LoanCalculationsUtil.calculateLoan;
 
 import com.example.demo.database.Loan;
 import com.example.demo.database.Repayment;
+import com.example.demo.enums.LoanStatus;
+import com.example.demo.enums.LoanType;
+import com.example.demo.enums.RepaymentStatus;
 import com.example.demo.model.exceptions.EmiOverflowException;
 import com.example.demo.model.exceptions.InsufficientPaymentException;
 import com.example.demo.model.exceptions.LoanAlreadyPaidException;
@@ -19,9 +22,6 @@ import com.example.demo.model.loan.LoanDTO;
 import com.example.demo.model.loan.PayEwiRequest;
 import com.example.demo.repository.LoanRepository;
 import com.example.demo.repository.RepaymentRepository;
-import com.example.demo.enums.LoanStatus;
-import com.example.demo.enums.LoanType;
-import com.example.demo.enums.RepaymentStatus;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -36,7 +36,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-
 
 /**
  * Service class responsible for managing loan-related operations.

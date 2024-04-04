@@ -2,10 +2,8 @@ package com.example.demo.model.loan;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import java.math.BigDecimal;
 import lombok.Builder;
 import lombok.Data;
-
 
 @Data
 @Builder

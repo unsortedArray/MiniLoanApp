@@ -1,7 +1,7 @@
 package com.example.demo.database;
 import com.example.demo.enums.RepaymentStatus;
-import jakarta.persistence.Entity;
 import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

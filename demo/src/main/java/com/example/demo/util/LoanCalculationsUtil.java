@@ -2,7 +2,6 @@ package com.example.demo.util;
 
 import static com.example.demo.util.Constants.INTEREST_RATE_FED;
 
-import java.math.BigDecimal;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

@@ -2,13 +2,13 @@ package com.example.demo.service;
 
 import com.example.demo.database.Token;
 import com.example.demo.database.User;
+import com.example.demo.enums.TokenTypes;
 import com.example.demo.model.authorization.JwtAuthRequest;
 import com.example.demo.model.authorization.JwtAuthResponse;
 import com.example.demo.model.authorization.JwtRegisterRequest;
 import com.example.demo.model.exceptions.UserAlreadyExistsException;
 import com.example.demo.repository.TokenRepository;
 import com.example.demo.repository.UserRepository;
-import com.example.demo.enums.TokenTypes;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
