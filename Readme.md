@@ -115,7 +115,7 @@ This project is a web application built using the Spring Boot framework, designe
 
 
 
-*** Project Arch***
+**Project Design**
 
 [Design Document](https://github.com/unsortedArray/MiniLoanApp/blob/main/ProjectArchReadMe.md)
 
