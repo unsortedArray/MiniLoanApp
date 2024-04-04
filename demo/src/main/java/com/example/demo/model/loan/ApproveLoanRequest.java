@@ -10,6 +10,8 @@ import lombok.NonNull;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ApproveLoanRequest {
   @NotNull(message = "LoanId is required")
   @Positive(message = "loanId number must be present.")

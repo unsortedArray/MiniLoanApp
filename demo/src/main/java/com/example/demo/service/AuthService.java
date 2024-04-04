@@ -5,10 +5,12 @@ import com.example.demo.database.User;
 import com.example.demo.model.authorization.JwtAuthRequest;
 import com.example.demo.model.authorization.JwtAuthResponse;
 import com.example.demo.model.authorization.JwtRegisterRequest;
+import com.example.demo.model.exceptions.UserAlreadyExistsException;
 import com.example.demo.repository.TokenRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.enums.TokenTypes;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -39,7 +41,13 @@ public class AuthService {
    * @return The generated access token.
    */
 
-  public JwtAuthResponse signup(JwtRegisterRequest request) {
+  public JwtAuthResponse signup(JwtRegisterRequest request) throws UserAlreadyExistsException {
+
+    Optional<User> user  = userRepository.findByUsername(request.getUsername());
+
+    if (user.isPresent()) {
+      throw new UserAlreadyExistsException("User with username " + request.getUsername() + " already exists");
+    }
 
     User newUser =
         User.builder()

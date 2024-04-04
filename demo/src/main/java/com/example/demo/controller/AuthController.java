@@ -3,6 +3,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.authorization.JwtAuthRequest;
 import com.example.demo.model.authorization.JwtRegisterRequest;
+import com.example.demo.model.exceptions.UserAlreadyExistsException;
 import com.example.demo.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class AuthController {
    * @throws Exception If an error occurs during the signup process.
    */
   @RequestMapping(value = "/signup", method = RequestMethod.POST)
-  public ResponseEntity<?> signup(@RequestBody JwtRegisterRequest authenticationRequest) throws Exception {
+  public ResponseEntity<?> signup(@RequestBody JwtRegisterRequest authenticationRequest) throws Exception, UserAlreadyExistsException {
 
 
     return ResponseEntity.ok((authService.signup(authenticationRequest)));

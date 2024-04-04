@@ -71,6 +71,7 @@ public class LoanService {
               .dueTerm(request.getTerm())
               .build();
       loanRepository.save(loan);
+      return ResponseEntity.status(HttpStatus.OK).body("Loan Created Successfully");
     } catch (DataIntegrityViolationException e) {
       // Handle data integrity violation exception (e.g., duplicate key, constraint violation)
       throw new RuntimeException(
@@ -83,7 +84,6 @@ public class LoanService {
       // Handle other general exceptions
       throw new RuntimeException("Failed to save loan due to unexpected error: " + e.getMessage());
     }
-    return ResponseEntity.status(HttpStatus.OK).body("Loan Created Successfully");
   }
 
   /**
@@ -224,6 +224,8 @@ public class LoanService {
       if (loan.getPendingAmount() == 0) {
         loan.setStatus(LoanStatus.PAID);
         loan.setDateClosed(LocalDateTime.now());
+
+        prepayEWI(loan);
       } else {
         loan.setNextDueDate(repayment.getDueDate().plusWeeks(1));
       }
@@ -231,6 +233,18 @@ public class LoanService {
     }else {
       throw new LoanAlreadyPaidException(loan.getDateClosed());
     }
+  }
+
+  private void prepayEWI(Loan loan) {
+    List<Repayment> remainingRepayments =
+        repaymentRepository.findByLoanAndStatus(loan, RepaymentStatus.PENDING);
+
+    for (Repayment curRepayment: remainingRepayments){
+      curRepayment.setStatus(RepaymentStatus.PAID);
+      curRepayment.setPaymentDate(LocalDateTime.now());
+
+    }
+    repaymentRepository.saveAll(remainingRepayments);
   }
 
   /**
