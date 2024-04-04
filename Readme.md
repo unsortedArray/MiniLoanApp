@@ -102,6 +102,17 @@ This project is a web application built using the Spring Boot framework, designe
 
 
 
+***DB Schema*** 
+
+
+<img width="901" alt="Screenshot 2024-04-04 at 7 24 24 AM" src="https://github.com/unsortedArray/MiniLoanApp/assets/27006043/5e5497d2-4375-4d01-a1cd-e11d77cd206d">
+
+
+
+
+*** Project Arch***
+
+[Design Document](https://github.com/unsortedArray/MiniLoanApp/blob/main/ProjectArchReadMe.md)
 
 
 
