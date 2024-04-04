@@ -94,7 +94,7 @@ This project is a web application built using the Spring Boot framework, designe
 ### 1. SignUp : 
 **The user can sign up with valid details**
 
-### 2. Signing:
+### 2. SignIn:
 **The user can sign up with valid credentials can sign in and returned valid token to be used for other requests**
 
 ### 3. Sign out:
